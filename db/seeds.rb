@@ -15,26 +15,26 @@ p " *                               * "
 p " ********************************* "
 ###########################################
 ## PARTIE DE DESTRUCTION DE DATA A COMMENTER AVANT D'ENVOYER SUR HEROKU
-p "Destroy curent data..."
+# p "Destroy curent data..."
 
-p "Destroying User... #{User.count} "
-p "Destroying Formation... #{Formation.count} "
-p "Destroying Room... #{Room.count} "
-p "Destroying Promotion... #{Promotion.count} "
-p "Destroying Category... #{Category.count} "
-p "Destroying PromotionUserJointure... #{PromotionUserJointure.count} "
-p "Destroying CategoryFormationJointure... #{CategoryFormationJointure.count} "
+# p "Destroying User... #{User.count} "
+# p "Destroying Formation... #{Formation.count} "
+# p "Destroying Room... #{Room.count} "
+# p "Destroying Promotion... #{Promotion.count} "
+# p "Destroying Category... #{Category.count} "
+# p "Destroying PromotionUserJointure... #{PromotionUserJointure.count} "
+# p "Destroying CategoryFormationJointure... #{CategoryFormationJointure.count} "
 
-User.destroy_all
-Formation.destroy_all
-Room.destroy_all
-Promotion.destroy_all
-CategoryFormationJointure.destroy_all
-PromotionUserJointure.destroy_all
-Category.destroy_all
+# User.destroy_all
+# Formation.destroy_all
+# Room.destroy_all
+# Promotion.destroy_all
+# CategoryFormationJointure.destroy_all
+# PromotionUserJointure.destroy_all
+# Category.destroy_all
 
-p "-----------------------"
-p "-----------------------"
+# p "-----------------------"
+# p "-----------------------"
 #############################################
 # Admin
 
