@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   rescue_from ActiveRecord::RecordNotUnique, with: :record_not_unique
 
   def render_jsonapi_response(resource)
@@ -19,6 +21,13 @@ class ApplicationController < ActionController::API
         }
       ]
     }, status: 400
+  end
+
+  protected
+
+  def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname, :role, :email, :password])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :role, :email, :password])
   end
 
 end
