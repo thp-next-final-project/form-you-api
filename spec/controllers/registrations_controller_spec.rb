@@ -10,6 +10,9 @@ describe RegistrationsController, type: :request do
     before do
       post signup_url, params: {
         user: {
+          firstname: user.firstname,
+          lastname: user.lastname,
+          role: user.role,
           email: user.email,
           password: user.password
         }
@@ -26,6 +29,16 @@ describe RegistrationsController, type: :request do
 
     it 'returns the user email' do
       expect(json['data']).to have_attribute(:email).with_value(user.email)
+    end
+    it 'returns the user role' do
+      expect(json['data']).to have_attribute(:role).with_value(user.role)
+    end
+    it 'returns the user firstname' do
+      expect(json['data']).to have_attribute(:firstname).with_value(user.firstname)
+    end
+    
+    it 'returns the user lastname' do
+      expect(json['data']).to have_attribute(:lastname).with_value(user.lastname)
     end
   end
 
