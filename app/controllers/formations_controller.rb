@@ -5,6 +5,7 @@ class FormationsController < ApplicationController
   def index
     @formations = Formation.all
 
+
     render json: @formations
   end
 

@@ -5,6 +5,12 @@ class CategoryFormationJointuresController < ApplicationController
   def index
     @category_formation_jointures = CategoryFormationJointure.all
 
+    @categories = Array.new 
+    @category_formations_jointures = CategoryFormationJointure.where(formation_id: @formation.id)
+
+    @category_formations_jointures.each do |category_formation_jointures|
+      @categories << category_formation_jointures.category
+
     render json: @category_formation_jointures
   end
 

@@ -3,7 +3,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:category_formation_jointures, :formations)
+    puts @categories[0].formations
+
+    
+
+
+
 
     render json: @categories
   end
