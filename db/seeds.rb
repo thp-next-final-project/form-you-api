@@ -39,7 +39,7 @@ p " ********************************* "
 # Admin
 
 # User
-10.times do |i|
+30.times do |i|
   User.create!(
     email: "user" + i.to_s + "@yopmail.com",
     encrypted_password: "user" + i.to_s,
