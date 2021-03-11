@@ -10,16 +10,16 @@ class User < ApplicationRecord
 
   # validates               :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "is not a valid email" }
   def to_h()
+    promotions = self.promotions
     return {
-      "user" => {
         "firstname" => self.firstname,
         "lastname" => self.lastname,
         "is_validated" => self.is_validated,
         "email" => self.email,
         "firstname" => self.firstname,
         "role" => self.role,
-        "id" => self.id
-      }
+        "id" => self.id,
+        "promotions" => promotions
     }
   end
 
